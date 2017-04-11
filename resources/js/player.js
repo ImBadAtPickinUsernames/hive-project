@@ -9,7 +9,7 @@ main.player = function (game) {
 
   function initPlayer() {
     // The player and its settings
-    player = game.add.sprite(32, game.world.height - 150, 'dude');
+    player = game.add.sprite(11, game.world.height - 150, 'char-sprite');
   }
 
   function setPlayerPhysics() {
@@ -21,7 +21,7 @@ main.player = function (game) {
 
   function setWalkingAnimations() {
     //  Our two animations, walking left and right.
-    player.animations.add('left', [0, 1, 2, 3], 10, true);
+    player.animations.add('left', [4, 3, 2, 1], 10, true);
     player.animations.add('right', [5, 6, 7, 8], 10, true);
   }
 
@@ -57,7 +57,7 @@ main.player = function (game) {
       //  Stand still
       player.animations.stop();
 
-      player.frame = 4;
+      player.frame = 0;
     }
   }
 
