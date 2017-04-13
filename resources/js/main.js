@@ -8,7 +8,7 @@ main = (function () {
   /*  const ;*/
 
   var that = {},
-    game = new Phaser.Game(800, 600, Phaser.AUTO, '', {
+    game = new Phaser.Game(1280, 720, Phaser.AUTO, '', {
       preload: preload,
       create: create,
       update: update
