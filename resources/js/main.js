@@ -15,7 +15,8 @@ main = (function () {
     }),
     player,
     obstacles,
-    textures;
+    textures,
+    npcs;
 
   function preload() {
     init();
@@ -37,17 +38,26 @@ main = (function () {
     player.enablePlayerPhysics();
     player.setPlayerPhysics();
     player.setWalkingAnimations();
+    
+    // The Npcs and its settings
+    npcs.initNpcs();
+    npcs.enableNpcPhysics();
+    npcs.setNpcPhysics();
+    npcs.setWalkingAnimations();
+    game.time.events.repeat(Phaser.Timer.SECOND * 3, 10, npcs.initNpcMovement, game);
   }
 
   function update() {
     // player update -> dependent on collision objects
     player.updatePlayer(obstacles.getPlatforms());
+    npcs.updateNpc(obstacles.getPlatforms());
   }
 
   function init() {
     player = new main.player(game);
+    npcs = new main.npcs(game);
     obstacles = new main.obstacles(game);
-    textures = new main.textures(game);
+    textures = new main.textures(game); 
   }
 
   that.init = init;

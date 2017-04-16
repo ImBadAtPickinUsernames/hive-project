@@ -1,5 +1,6 @@
 /* eslint-env browser */
 /* global main */
+/* global Phaser */
 
 main.player = function (game) {
   "use strict";
@@ -32,11 +33,19 @@ main.player = function (game) {
 
   function updatePlayer(platforms) {
     //  Collide the player and the stars with the platforms
-    var hitPlatform = game.physics.arcade.collide(player, platforms),
-      cursors = game.input.keyboard.createCursorKeys();
+    var hitPlatform,
+      cursors,
+      spacebar;
+
+    hitPlatform = game.physics.arcade.collide(player, platforms);
+
+    // arrow keys (predefined by engine)
+    cursors = game.input.keyboard.createCursorKeys();
+    // custom keys
+    spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     handlePlayerMovement(cursors);
-    handlePlayerCollision(cursors, hitPlatform);
+    handlePlayerCollision(spacebar, hitPlatform);
   }
 
   function handlePlayerMovement(cursors) {
@@ -61,10 +70,10 @@ main.player = function (game) {
     }
   }
 
-  function handlePlayerCollision(cursors, hitPlatform) {
+  function handlePlayerCollision(spacebar, hitPlatform) {
     //  Allow the player to jump if they are touching the ground.
-    if (cursors.up.isDown && player.body.touching.down && hitPlatform) {
-      player.body.velocity.y = -350;
+    if (spacebar.isDown && player.body.touching.down && hitPlatform) {
+      player.body.velocity.y = -100;
     }
   }
 

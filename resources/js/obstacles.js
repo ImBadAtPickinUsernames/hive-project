@@ -27,24 +27,38 @@ main.obstacles = function (game) {
   }
 
   function createPlatforms() {
-    //  Now let's create two ledges
-    var ledge = platforms.create(164, 300, 'ground');
+    var floor,
+        wall;
     
-    ledge.scale.setTo(2.428, 0.5);
+    // 3rd floor
+    floor = platforms.create(164, 100, 'ground');
+    floor.scale.setTo(2.428, 0.5);
+    floor.body.immovable = true;
+    // 2nd floor
+    floor = platforms.create(164, 300, 'ground');
+    floor.scale.setTo(2.428, 0.5);
+    floor.body.immovable = true;
+    // 1st floor
+    floor = platforms.create(164, 500, 'ground');
+    floor.scale.setTo(2.428, 0.5);
+    floor.body.immovable = true;
     
-    ledge.body.immovable = true;
-
-    ledge = platforms.create(164, 500, 'ground');
+    // building walls
     
-    ledge.scale.setTo(2.428, 0.5);
-    
-    ledge.body.immovable = true;
+    // left
+    wall = platforms.create(150, 0, 'wall')
+    wall.scale.setTo(0.5, 3);
+    wall.body.immovable = true;
+    // right
+    wall = platforms.create(1130, 0, 'wall')
+    wall.scale.setTo(0.5, 3);
+    wall.body.immovable = true;
   }
 
   function getPlatforms() {
     return platforms;
   }
-
+  
   that.initPlatforms = initPlatforms;
   that.initGround = initGround;
   that.createPlatforms = createPlatforms;
