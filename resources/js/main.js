@@ -20,6 +20,7 @@ main = (function () {
 
   function preload() {
     init();
+    setupGame();
     textures.preloadTextures();
   }
 
@@ -44,11 +45,12 @@ main = (function () {
     npcs.enableNpcPhysics();
     npcs.setNpcPhysics();
     npcs.setWalkingAnimations();
+    
+    // random npc movement
     game.time.events.repeat(Phaser.Timer.SECOND * 3, 10, npcs.initNpcMovement, game);
   }
 
   function update() {
-    // player update -> dependent on collision objects
     player.updatePlayer(obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
   }
@@ -59,7 +61,15 @@ main = (function () {
     obstacles = new main.obstacles(game);
     textures = new main.textures(game); 
   }
+  
+  function setupGame(){
+    // aligns the game canvas to the middle of the screen
+    game.scale.pageAlignHorizontally = true;
+    game.scale.pageAlignVertically = true;
+    game.scale.refresh();
+  }
 
   that.init = init;
+  
   return that;
 }());
