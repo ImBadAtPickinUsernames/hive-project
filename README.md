@@ -10,5 +10,3 @@ Early screenshots:
 ![screenshot 2017-04-17 13 26 05](https://cloud.githubusercontent.com/assets/20909245/25087814/0312c77c-2372-11e7-96df-83663c13dda2.png)
 
 ![screenshot 2017-04-17 13 26 17](https://cloud.githubusercontent.com/assets/20909245/25087872/533c1492-2372-11e7-88d4-fa34077f6114.png)
-
-![screenshot 2017-04-17 13 26 08](https://cloud.githubusercontent.com/assets/20909245/25087869/50c0acb4-2372-11e7-8e00-047d67711f17.png)
