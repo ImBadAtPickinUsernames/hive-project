@@ -50,29 +50,53 @@ main = (function () {
 
     // menu
     menuGroup = game.add.group();
-    var menuButton = game.add.button(game.world.width / 2, 30, 'menubutton', toggleMenu);
-    menuButton.anchor.set(0.5);
-    menuGroup.add(menuButton);
-    var itemSlotOne = game.add.button(game.world.width / 2 - 400, -50, "item-slot-empty", function () {});
+    var inventoryButton = game.add.button(game.world.width / 2, 30, 'inventory-button', toggleInventory);
+    inventoryButton.anchor.set(0.5);
+    menuGroup.add(inventoryButton);
+
+    var itemSlotOne = game.add.button(game.world.width / 2 - 400, -80, "item-slot-empty", function () {
+      console.log("Item Slot 1 has been clicked!");
+    });
     itemSlotOne.anchor.set(0.5);
     menuGroup.add(itemSlotOne);
-    var itemSlotTwo = game.add.button(game.world.width / 2 - 200, -50, "item-slot-empty", function () {});
+
+    var itemSlotTwo = game.add.button(game.world.width / 2 - 200, -80, "item-slot-empty", function () {
+      console.log("Item Slot 2 has been clicked!");
+    });
     itemSlotTwo.anchor.set(0.5);
     menuGroup.add(itemSlotTwo);
-    var itemSlotThree = game.add.button(game.world.width / 2, -50, "item-slot-empty", function () {});
+
+    var itemSlotThree = game.add.button(game.world.width / 2, -80, "item-slot-empty", function () {
+      console.log("Item Slot 3 has been clicked!");
+    });
     itemSlotThree.anchor.set(0.5);
     menuGroup.add(itemSlotThree);
-    var itemSlotFour = game.add.button(game.world.width / 2 + 200, -50, "item-slot-empty", function () {});
+
+    var itemSlotFour = game.add.button(game.world.width / 2 + 200, -80, "item-slot-empty", function () {
+      console.log("Item Slot 4 has been clicked!");
+    });
     itemSlotFour.anchor.set(0.5);
     menuGroup.add(itemSlotFour);
-    var itemSlotFive = game.add.button(game.world.width / 2 + 400, -50, "item-slot-empty", function () {});
+
+    var itemSlotFive = game.add.button(game.world.width / 2 + 400, -80, "item-slot-empty", function () {
+      console.log("Item Slot 5 has been clicked!");
+    });
     itemSlotFive.anchor.set(0.5);
     menuGroup.add(itemSlotFive);
+
+    game.input.mouse.mouseWheelCallback = mouseWheel;
   }
 
   function update() {
     player.updatePlayer(obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
+  }
+
+  function mouseWheel(event) {
+    console.log(game.input.mouse.wheelDelta);
+    if (game.input.mouse.wheelDelta === Phaser.Mouse.WHEEL_DOWN) {
+      toggleInventory();
+    }
   }
 
   function init() {
@@ -88,9 +112,9 @@ main = (function () {
     game.scale.pageAlignVertically = true;
     game.scale.refresh();
   }
-  
+
   // menu from http://codepen.io/cardex107/pen/VaPRXo
-  function toggleMenu() {
+  function toggleInventory() {
     if (menuGroup.y == 0) {
       var menuTween = game.add.tween(menuGroup).to({
         y: 130
