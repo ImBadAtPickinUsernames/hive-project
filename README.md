@@ -9,7 +9,7 @@ Every worker on the floors wear the same tie. Everyone except the floor's 'boss'
 
 **Early screenshots:**
 
-- The workers with blue ties represent my npcs which are moving randomly around.
+- The workers with blue ties represent the npcs which are moving randomly around.
 - The worker with the black tie is playable.
 
 ![screenshot 2017-04-17 13 26 05](https://cloud.githubusercontent.com/assets/20909245/25087814/0312c77c-2372-11e7-96df-83663c13dda2.png)
