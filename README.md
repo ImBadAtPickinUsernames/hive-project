@@ -28,4 +28,6 @@ Every worker on the floors wear the same tie. Everyone except the floor's 'boss'
 
 **W** - toggle inventory
 
-**E** - Use something
+**E** - use something
+
+**SPACEBAR** - jump
