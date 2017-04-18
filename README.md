@@ -22,7 +22,10 @@ Every worker on the floors wear the same tie. Everyone except the floor's 'boss'
 
 **Controls:**
 
-A - walk left
-D - walk right
-W - toggle inventory
-E - Use something
+**A** - walk left
+
+**D** - walk right
+
+**W** - toggle inventory
+
+**E** - Use something
