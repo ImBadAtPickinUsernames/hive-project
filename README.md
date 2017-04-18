@@ -2,11 +2,13 @@
 This is a first attempt to make a game using the "Phaser" game engine.
 
 **Game Idea:**
+
 The basic idea of this game will be to get to the top of the building no matter what. You may have to use unorthodox methods to climb your way on top of the food chain. What will wait on the top? What secrets does this company hide?
 
 Every worker on the floors wear the same tie. Everyone except the floor's 'boss' who wears the same tie as the workers the floor above. 
 
 **Early screenshots:**
+
 - The workers with blue ties represent my npcs which are moving randomly around.
 - The worker with the black tie is playable.
 
