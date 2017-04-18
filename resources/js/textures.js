@@ -11,6 +11,8 @@ main.textures = function (game) {
     game.load.image('building', 'resources/assets/backgrounds/building.png');
     game.load.image('ground', 'resources/assets/obstacles/platform.png');
     game.load.image('wall', 'resources/assets/obstacles/wall.png');
+    game.load.image('empty-slot', 'resources/assets/items/empty-slot.png');
+    game.load.image('inventory-button', 'resources/assets/items/inventory-button.png');
     game.load.spritesheet('main-char', 'resources/assets/chars/main-char.png', 22, 50);
     game.load.spritesheet('floor-one-boss', 'resources/assets/chars/npc-blue-tie/floor-one-boss.png', 22, 50);
     game.load.spritesheet('npc-floor-one-basic', 'resources/assets/chars/npc-blue-tie/white-black-hair-npc-basic.png', 22, 50);

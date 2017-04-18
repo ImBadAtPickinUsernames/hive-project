@@ -6,7 +6,8 @@ main.player = function (game) {
   "use strict";
 
   var that = {},
-    player;
+    player,
+    inventoryGroup;
 
   function initPlayer() {
     // The player and its settings
@@ -31,49 +32,123 @@ main.player = function (game) {
     game.physics.arcade.enable(player);
   }
 
+  function createInventory() {
+    // inventory
+    var inventoryButton,
+      itemSlotOne,
+      itemSlotTwo,
+      itemSlotThree,
+      itemSlotFour,
+      itemSlotFive;
+
+    inventoryGroup = game.add.group();
+
+    // ToggleInventory Button
+    inventoryButton = game.add.button(game.world.width / 2, 30, 'inventory-button', toggleInventory);
+    inventoryButton.anchor.set(0.5);
+    inventoryGroup.add(inventoryButton);
+
+    // 1st item slot
+    itemSlotOne = game.add.button(game.world.width / 2 - 400, -80, 'empty-slot', function () {
+      console.log("Item Slot 1 has been clicked!");
+    });
+
+    itemSlotOne.anchor.set(0.5);
+    inventoryGroup.add(itemSlotOne);
+
+    // 2nd item slot
+    itemSlotTwo = game.add.button(game.world.width / 2 - 200, -80, 'empty-slot', function () {
+      console.log("Item Slot 2 has been clicked!");
+    });
+
+    itemSlotTwo.anchor.set(0.5);
+    inventoryGroup.add(itemSlotTwo);
+
+    // 3rd item slot
+    itemSlotThree = game.add.button(game.world.width / 2, -80, 'empty-slot', function () {
+      console.log("Item Slot 3 has been clicked!");
+    });
+
+    itemSlotThree.anchor.set(0.5);
+    inventoryGroup.add(itemSlotThree);
+
+    // 4th item slot
+    itemSlotFour = game.add.button(game.world.width / 2 + 200, -80, 'empty-slot', function () {
+      console.log("Item Slot 4 has been clicked!");
+    });
+
+    itemSlotFour.anchor.set(0.5);
+    inventoryGroup.add(itemSlotFour);
+
+    // 5th item slot
+    itemSlotFive = game.add.button(game.world.width / 2 + 400, -80, 'empty-slot', function () {
+      console.log("Item Slot 5 has been clicked!");
+    });
+
+    itemSlotFive.anchor.set(0.5);
+    inventoryGroup.add(itemSlotFive);
+  }
+
   function updatePlayer(platforms) {
-    //  Collide the player and the stars with the platforms
     var hitPlatform,
-      cursors,
-      spacebar;
+      w, s, a, d, e, spacebar;
 
     hitPlatform = game.physics.arcade.collide(player, platforms);
 
-    // arrow keys (predefined by engine)
-    cursors = game.input.keyboard.createCursorKeys();
-    // custom keys
+    w = game.input.keyboard.addKey(Phaser.Keyboard.W);
+    s = game.input.keyboard.addKey(Phaser.Keyboard.S);
+    a = game.input.keyboard.addKey(Phaser.Keyboard.A);
+    d = game.input.keyboard.addKey(Phaser.Keyboard.D);
+    e = game.input.keyboard.addKey(Phaser.Keyboard.E);
     spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    
 
-    handlePlayerMovement(cursors);
-    handlePlayerCollision(spacebar, hitPlatform);
+    handleControls(w, s, a, d, e);
+    handlePlayerJump(spacebar, hitPlatform);
   }
 
-  function handlePlayerMovement(cursors) {
+  function handleControls(w, s, a, d/*, e*/) {
+    // Inventory
+    if (w.isDown) {
+      toggleInventory();
+    }
+
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
-
-    if (cursors.left.isDown) {
+    // Player movement
+    if (a.isDown) {
       //  Move to the left
       player.body.velocity.x = -100;
-
       player.animations.play('left');
-    } else if (cursors.right.isDown) {
+    } else if (d.isDown) {
       //  Move to the right
       player.body.velocity.x = 100;
-
       player.animations.play('right');
     } else {
       //  Stand still
       player.animations.stop();
-
       player.frame = 9;
     }
   }
 
-  function handlePlayerCollision(spacebar, hitPlatform) {
+  function handlePlayerJump(spacebar, hitPlatform) {
     //  Allow the player to jump if they are touching the ground.
     if (spacebar.isDown && player.body.touching.down && hitPlatform) {
       player.body.velocity.y = -100;
+    }
+  }
+
+  // menu from http://codepen.io/cardex107/pen/VaPRXo
+  function toggleInventory() {
+    if (inventoryGroup.y == 0) {
+      var inventoryTween = game.add.tween(inventoryGroup).to({
+        y: 130
+      }, 500, Phaser.Easing.Bounce.Out, true);
+    }
+    if (inventoryGroup.y == 130) {
+      inventoryTween = game.add.tween(inventoryGroup).to({
+        y: 0
+      }, 500, Phaser.Easing.Bounce.Out, true);
     }
   }
 
@@ -87,6 +162,7 @@ main.player = function (game) {
   that.setPlayerPhysics = setPlayerPhysics;
   that.enablePlayerPhysics = enablePlayerPhysics;
   that.updatePlayer = updatePlayer;
+  that.createInventory = createInventory;
 
   return that;
 }
