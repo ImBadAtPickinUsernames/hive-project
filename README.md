@@ -34,4 +34,6 @@ Every worker on the floors wear the same tie. Everyone except the floor's 'boss'
 
 Inspiration:
 
-George Cruikshank's British Bee Hive, originally sketched in 1840, here reprinted in 1867, depicts a vast range of Britain's professions within a strictly divided pyramid-based social hierarchy. In the 19th century the bee was a popular symbol of industry and co-operation. - See more at: https://www.bl.uk/collection-items/the-british-bee-hive#sthash.mhX7wlI1.dpuf
+![british-beehive](https://cloud.githubusercontent.com/assets/20909245/25156887/db549134-249d-11e7-9196-df14201c649d.jpg)
+
+George Cruikshank's British Bee Hive, originally sketched in 1840, here reprinted in 1867, depicts a vast range of Britain's professions within a strictly divided pyramid-based social hierarchy. In the 19th century the bee was a popular symbol of industry and co-operation.
