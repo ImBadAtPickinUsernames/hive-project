@@ -28,10 +28,12 @@ main = (function () {
     // inititates collision objects like platforms and other obstacles
     obstacles.initPlatforms();
     obstacles.initGround();
+    obstacles.initElevator();
+    obstacles.setElevatorAnimation();
 
     // creates platforms and other obstacles
     obstacles.createPlatforms();
-
+    
     // The player and its settings
     player.initPlayer();
     player.enablePlayerPhysics();
@@ -52,6 +54,7 @@ main = (function () {
   function update() {
     player.updatePlayer(obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
+    obstacles.updateObs();
   }
 
   function init() {

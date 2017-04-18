@@ -16,6 +16,7 @@ main.textures = function (game) {
     game.load.spritesheet('main-char', 'resources/assets/chars/main-char.png', 22, 50);
     game.load.spritesheet('floor-one-boss', 'resources/assets/chars/npc-blue-tie/floor-one-boss.png', 22, 50);
     game.load.spritesheet('npc-floor-one-basic', 'resources/assets/chars/npc-blue-tie/white-black-hair-npc-basic.png', 22, 50);
+    game.load.spritesheet('elevator', 'resources/assets/backgrounds/elevator-sprite.png', 50, 60);
   }
 
   function loadTextures() {

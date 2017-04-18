@@ -52,7 +52,7 @@ main.player = function (game) {
     itemSlotOne = game.add.button(game.world.width / 2 - 400, -80, 'empty-slot', function () {
       console.log("Item Slot 1 has been clicked!");
     });
-
+    
     itemSlotOne.anchor.set(0.5);
     inventoryGroup.add(itemSlotOne);
 
@@ -107,12 +107,12 @@ main.player = function (game) {
     handlePlayerJump(spacebar, hitPlatform);
   }
 
-  function handleControls(w, s, a, d/*, e*/) {
+  function handleControls(w, s, a, d) {
     // Inventory
     if (w.isDown) {
       toggleInventory();
     }
-
+    
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
     // Player movement
