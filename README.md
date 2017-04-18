@@ -11,7 +11,7 @@ Early screenshots:
 
 ![screenshot 2017-04-17 13 26 17](https://cloud.githubusercontent.com/assets/20909245/25087872/533c1492-2372-11e7-88d4-fa34077f6114.png)
 
-Early inventory system:
+Early inventory system (clickable suitcase that triggers the inventory):
 
 ![screenshot 2017-04-19 00 44 32](https://cloud.githubusercontent.com/assets/20909245/25156218/8ca225a0-2499-11e7-8220-3c26f4c8bd4d.png)
 
