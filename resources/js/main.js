@@ -26,9 +26,7 @@ main = (function () {
     textures.loadTextures();
 
     // inititates collision objects like platforms and other obstacles
-    obstacles.initPlatforms();
-    obstacles.initGround();
-    obstacles.initElevator();
+    obstacles.initObstacles();
     obstacles.setElevatorAnimation();
 
     // creates platforms and other obstacles
@@ -36,6 +34,7 @@ main = (function () {
     
     // The player and its settings
     player.initPlayer();
+    player.initItems();
     player.enablePlayerPhysics();
     player.setPlayerPhysics();
     player.setWalkingAnimations();

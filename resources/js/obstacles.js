@@ -9,15 +9,13 @@ main.obstacles = function (game) {
     elevator,
     elevatorClosed = true;
 
-  function initPlatforms() {
+  function initObstacles() {
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
 
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
-  }
-
-  function initGround() {
+    
     // Here we create the ground.
     var ground = platforms.create(164, game.world.height - 5, 'ground');
 
@@ -26,10 +24,8 @@ main.obstacles = function (game) {
 
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
-  }
-
-  function initElevator() {
-    // The player and its settings
+    
+    // The elevator
     elevator = game.add.sprite(200, game.world.height - 65, 'elevator');
   }
 
@@ -90,9 +86,7 @@ main.obstacles = function (game) {
 
   that.openElevator = openElevator;
   that.closeElevator = closeElevator;
-  that.initPlatforms = initPlatforms;
-  that.initGround = initGround;
-  that.initElevator = initElevator;
+  that.initObstacles = initObstacles;
   that.setElevatorAnimation = setElevatorAnimation;
   that.createPlatforms = createPlatforms;
   that.updateObs = updateObs;

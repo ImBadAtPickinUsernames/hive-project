@@ -9,6 +9,7 @@ main.player = function (game) {
     player,
     items,
     coffeeMug,
+    coffeeMugItem,
     itemIsInRange,
     inventoryGroup,
     slotOneFilled = false,
@@ -25,6 +26,9 @@ main.player = function (game) {
   function initItems(){
     items = game.add.group();
     items.enableBody = true;
+    
+    coffeeMugItem = items.create(500, game.world.height - 100, 'coffee-mug');
+    coffeeMugItem.body.immovable = true;
   }
 
   function setPlayerPhysics() {
@@ -139,6 +143,7 @@ main.player = function (game) {
       coffeeMug = game.add.image(game.world.width / 2 - 400, -70, 'coffee-mug');
       coffeeMug.anchor.set(0.5);
       inventoryGroup.add(coffeeMug);
+      coffeeMugItem.destroy();
       slotOneFilled === true;
     } else if (slotOneFilled === true && slotTwoFilled === false) {
       slotTwoFilled === true;
