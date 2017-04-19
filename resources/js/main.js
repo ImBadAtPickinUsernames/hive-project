@@ -18,11 +18,11 @@ main = (function () {
 
   function preload() {
     init();
-    setupGame();
     textures.preloadTextures();
   }
 
   function create() {
+    // draw building and background
     textures.loadTextures();
 
     // inititates collision objects like platforms and other obstacles
@@ -30,19 +30,17 @@ main = (function () {
     obstacles.setElevatorAnimation();
 
     // creates platforms and other obstacles
-    obstacles.createPlatforms();
-    
+    obstacles.createObsacles();
+
     // The player and its settings
     player.initPlayer();
     player.initItems();
-    player.enablePlayerPhysics();
     player.setPlayerPhysics();
     player.setWalkingAnimations();
     player.createInventory();
 
     // The Npcs and its settings
     npcs.initNpcs();
-    npcs.enableNpcPhysics();
     npcs.setNpcPhysics();
     npcs.setWalkingAnimations();
 
@@ -51,9 +49,11 @@ main = (function () {
   }
 
   function update() {
+    centerGame();
+
     player.updatePlayer(obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
-    obstacles.updateObs(); 
+    obstacles.updateObs();
   }
 
   function init() {
@@ -63,8 +63,8 @@ main = (function () {
     textures = new main.textures(game);
   }
 
-  function setupGame() {
-    // aligns the game canvas to the middle of the screen
+  function centerGame() {
+    // centers the game canvas to the middle of the screen
     game.scale.pageAlignHorizontally = true;
     game.scale.pageAlignVertically = true;
     game.scale.refresh();

@@ -15,7 +15,7 @@ main.obstacles = function (game) {
 
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
-    
+
     // Here we create the ground.
     var ground = platforms.create(164, game.world.height - 5, 'ground');
 
@@ -24,27 +24,13 @@ main.obstacles = function (game) {
 
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
-    
+
     // The elevator
     elevator = game.add.sprite(200, game.world.height - 65, 'elevator');
   }
 
-  function createPlatforms() {
-    var /*floor,*/
-      wall;
-
-    /*// 3rd floor
-    floor = platforms.create(164, 100, 'ground');
-    floor.scale.setTo(2.428, 0.5);
-    floor.body.immovable = true;
-    // 2nd floor
-    floor = platforms.create(164, 300, 'ground');
-    floor.scale.setTo(2.428, 0.5);
-    floor.body.immovable = true;
-    // 1st floor
-    floor = platforms.create(164, 500, 'ground');
-    floor.scale.setTo(2.428, 0.5);
-    floor.body.immovable = true;*/
+  function createObsacles() {
+    var wall;
 
     // building walls
 
@@ -88,7 +74,7 @@ main.obstacles = function (game) {
   that.closeElevator = closeElevator;
   that.initObstacles = initObstacles;
   that.setElevatorAnimation = setElevatorAnimation;
-  that.createPlatforms = createPlatforms;
+  that.createObsacles = createObsacles;
   that.updateObs = updateObs;
   that.getPlatforms = getPlatforms;
 

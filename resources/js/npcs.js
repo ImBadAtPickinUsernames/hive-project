@@ -18,6 +18,10 @@ main.npcs = function (game) {
   }
 
   function setNpcPhysics() {
+    //  We need to enable physics on the npcs
+    game.physics.arcade.enable(npcFloorOneBoss);
+    game.physics.arcade.enable(npc);
+
     npcFloorOneBoss.body.bounce.y = 0.2;
     npcFloorOneBoss.body.gravity.y = 300;
     npcFloorOneBoss.body.collideWorldBounds = true;
@@ -34,12 +38,6 @@ main.npcs = function (game) {
 
     npc.animations.add('left', [4, 1, 2, 3], 10, true);
     npc.animations.add('right', [5, 6, 7, 8], 10, true);
-  }
-
-  function enableNpcPhysics() {
-    //  We need to enable physics on the npcs
-    game.physics.arcade.enable(npcFloorOneBoss);
-    game.physics.arcade.enable(npc);
   }
 
   function updateNpc(platforms) {
@@ -103,7 +101,6 @@ main.npcs = function (game) {
   that.initNpcMovement = initNpcMovement;
   that.setWalkingAnimations = setWalkingAnimations;
   that.setNpcPhysics = setNpcPhysics;
-  that.enableNpcPhysics = enableNpcPhysics;
   that.updateNpc = updateNpc;
 
   return that;
