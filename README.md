@@ -1,5 +1,6 @@
 # hive-project
-> This is a first attempt to make a game using the "Phaser" game engine.
+> This is my first attempt to make a game using the "Phaser" game engine.
+> Also I'm too experienced in developing games (especially using javascipt).
 
 **Game idea:**
 
