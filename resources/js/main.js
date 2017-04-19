@@ -54,7 +54,7 @@ main = (function () {
   function update() {
     player.updatePlayer(obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
-    obstacles.updateObs();
+    obstacles.updateObs(); 
   }
 
   function init() {

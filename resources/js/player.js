@@ -7,11 +7,24 @@ main.player = function (game) {
 
   var that = {},
     player,
-    inventoryGroup;
+    items,
+    coffeeMug,
+    itemIsInRange,
+    inventoryGroup,
+    slotOneFilled = false,
+    slotTwoFilled = false,
+    slotThreeFilled = false,
+    slotFourFilled = false,
+    slotFiveFilled = false;
 
   function initPlayer() {
     // The player and its settings
     player = game.add.sprite(200, game.world.height - 150, 'main-char');
+  }
+  
+  function initItems(){
+    items = game.add.group();
+    items.enableBody = true;
   }
 
   function setPlayerPhysics() {
@@ -35,6 +48,7 @@ main.player = function (game) {
   function createInventory() {
     // inventory
     var inventoryButton,
+      inventoryBackground,
       itemSlotOne,
       itemSlotTwo,
       itemSlotThree,
@@ -48,16 +62,22 @@ main.player = function (game) {
     inventoryButton.anchor.set(0.5);
     inventoryGroup.add(inventoryButton);
 
+    // Inventory background
+    inventoryBackground = game.add.image(648, -70, 'inventory-case');
+
+    inventoryBackground.anchor.set(0.5);
+    inventoryGroup.add(inventoryBackground);
+
     // 1st item slot
-    itemSlotOne = game.add.button(game.world.width / 2 - 400, -80, 'empty-slot', function () {
+    itemSlotOne = game.add.button(game.world.width / 2 - 400, -70, 'empty-slot', function () {
       console.log("Item Slot 1 has been clicked!");
     });
-    
+
     itemSlotOne.anchor.set(0.5);
     inventoryGroup.add(itemSlotOne);
 
     // 2nd item slot
-    itemSlotTwo = game.add.button(game.world.width / 2 - 200, -80, 'empty-slot', function () {
+    itemSlotTwo = game.add.button(game.world.width / 2 - 200, -70, 'empty-slot', function () {
       console.log("Item Slot 2 has been clicked!");
     });
 
@@ -65,7 +85,7 @@ main.player = function (game) {
     inventoryGroup.add(itemSlotTwo);
 
     // 3rd item slot
-    itemSlotThree = game.add.button(game.world.width / 2, -80, 'empty-slot', function () {
+    itemSlotThree = game.add.button(game.world.width / 2, -70, 'empty-slot', function () {
       console.log("Item Slot 3 has been clicked!");
     });
 
@@ -73,7 +93,7 @@ main.player = function (game) {
     inventoryGroup.add(itemSlotThree);
 
     // 4th item slot
-    itemSlotFour = game.add.button(game.world.width / 2 + 200, -80, 'empty-slot', function () {
+    itemSlotFour = game.add.button(game.world.width / 2 + 200, -70, 'empty-slot', function () {
       console.log("Item Slot 4 has been clicked!");
     });
 
@@ -81,7 +101,7 @@ main.player = function (game) {
     inventoryGroup.add(itemSlotFour);
 
     // 5th item slot
-    itemSlotFive = game.add.button(game.world.width / 2 + 400, -80, 'empty-slot', function () {
+    itemSlotFive = game.add.button(game.world.width / 2 + 400, -70, 'empty-slot', function () {
       console.log("Item Slot 5 has been clicked!");
     });
 
@@ -94,6 +114,7 @@ main.player = function (game) {
       w, s, a, d, e, spacebar;
 
     hitPlatform = game.physics.arcade.collide(player, platforms);
+    itemIsInRange = game.physics.arcade.collide(player, items);
 
     w = game.input.keyboard.addKey(Phaser.Keyboard.W);
     s = game.input.keyboard.addKey(Phaser.Keyboard.S);
@@ -101,18 +122,45 @@ main.player = function (game) {
     d = game.input.keyboard.addKey(Phaser.Keyboard.D);
     e = game.input.keyboard.addKey(Phaser.Keyboard.E);
     spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-    
 
     handleControls(w, s, a, d, e);
     handlePlayerJump(spacebar, hitPlatform);
+    handleItemPickup(e, itemIsInRange);
+  }
+  
+  function handleItemPickup(e, itemIsInRange){
+    if(itemIsInRange && e.isDown){
+      pickUpItem();
+    } 
   }
 
-  function handleControls(w, s, a, d) {
+  function pickUpItem() {
+    if (slotOneFilled === false && itemIsInRange) {
+      coffeeMug = game.add.image(game.world.width / 2 - 400, -70, 'coffee-mug');
+      coffeeMug.anchor.set(0.5);
+      inventoryGroup.add(coffeeMug);
+      slotOneFilled === true;
+    } else if (slotOneFilled === true && slotTwoFilled === false) {
+      slotTwoFilled === true;
+    } else if (slotTwoFilled === true && slotThreeFilled === false) {
+      slotThreeFilled === true;
+    } else if (slotThreeFilled === true && slotFourFilled === false) {
+      slotFourFilled === true;
+    } else if (slotFourFilled === true && slotFiveFilled === false) {
+      slotFiveFilled === true;
+    }
+  }
+
+  function handleControls(w, s, a, d, e) {
     // Inventory
     if (w.isDown) {
       toggleInventory();
     }
     
+    if (e.isDown){
+      pickUpItem();
+    }
+
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
     // Player movement
@@ -138,7 +186,7 @@ main.player = function (game) {
     }
   }
 
-  // menu from http://codepen.io/cardex107/pen/VaPRXo
+  // inventory inspired by http://codepen.io/cardex107/pen/VaPRXo
   function toggleInventory() {
     if (inventoryGroup.y == 0) {
       var inventoryTween = game.add.tween(inventoryGroup).to({
@@ -157,6 +205,7 @@ main.player = function (game) {
   }
 
   that.initPlayer = initPlayer;
+  that.initItems = initItems;
   that.getPlayer = getPlayer;
   that.setWalkingAnimations = setWalkingAnimations;
   that.setPlayerPhysics = setPlayerPhysics;

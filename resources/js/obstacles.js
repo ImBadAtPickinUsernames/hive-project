@@ -1,6 +1,5 @@
 /* eslint-env browser */
 /* global main */
-/* global Phaser */
 
 main.obstacles = function (game) {
   "use strict";
@@ -35,10 +34,10 @@ main.obstacles = function (game) {
   }
 
   function createPlatforms() {
-    var floor,
+    var /*floor,*/
       wall;
 
-    // 3rd floor
+    /*// 3rd floor
     floor = platforms.create(164, 100, 'ground');
     floor.scale.setTo(2.428, 0.5);
     floor.body.immovable = true;
@@ -49,7 +48,7 @@ main.obstacles = function (game) {
     // 1st floor
     floor = platforms.create(164, 500, 'ground');
     floor.scale.setTo(2.428, 0.5);
-    floor.body.immovable = true;
+    floor.body.immovable = true;*/
 
     // building walls
 
@@ -64,48 +63,24 @@ main.obstacles = function (game) {
   }
 
   function setElevatorAnimation() {
-    elevator.animations.add('open', [0, 1, 2, 3, 5, 6, 7, 8, 9], 15, true);
-    elevator.animations.add('close', [9, 8, 7, 6, 5, 4, 3, 2, 1, 0], 15, true);
+    elevator.animations.add('open', [0, 1, 2, 3, 5, 6, 7, 8, 9], 10, false);
+    elevator.animations.add('close', [9, 8, 7, 6, 5, 4, 3, 2, 1, 0], 10, false);
   }
 
   function closeElevator() {
     elevator.animations.play('close');
-    elevatorClosed = true;
-
   }
 
   function openElevator() {
     elevator.animations.play('open');
-    elevatorClosed = false;
   }
 
   function updateObs() {
-    var e;
-
-    e = game.input.keyboard.addKey(Phaser.Keyboard.E);
-
-    handleControls(e);
-
-    if (e.isDown && elevatorClosed === true) {
-      openElevator();
-    } else if (e.isDown && elevatorClosed === false) {
-      closeElevator();
+    // won't work in future
+    if (elevatorClosed) {
+      elevator.frame = 0;
     } else {
-      if (elevatorClosed === true) {
-        elevator.frame = 0;
-      } else if (elevatorClosed === false) {
-        elevator.frame = 9;
-      }
-    }
-  }
-
-  function handleControls(e) {
-    if (e.isDown && elevator.frame === 0) {
-      openElevator();
-    }
-
-    if (e.isDown && elevator.frame === 9) {
-      closeElevator();
+      elevator.frame = 9;
     }
   }
 
@@ -113,6 +88,8 @@ main.obstacles = function (game) {
     return platforms;
   }
 
+  that.openElevator = openElevator;
+  that.closeElevator = closeElevator;
   that.initPlatforms = initPlatforms;
   that.initGround = initGround;
   that.initElevator = initElevator;
