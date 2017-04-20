@@ -5,7 +5,7 @@
 
 The basic idea of this game will be to get to the top of the building no matter what. You may have to use unorthodox methods to climb your way on top of the food chain. What will wait on the top? What secrets does this company hide?
 
-Every floor of the building represents one level. Every worker on the floors wear the same tie. Everyone except the floor's 'boss' who wears the same tie as the workers the floor above. Your goal is to sabotage this boss in any way to get a promotion (to get his job). If you pass the level you can use the elevator who brings you to the next level (higher floor).
+Every floor of the building represents one level. Every worker on the floors wear the same tie (everyone except the floor's 'boss' who wears the same tie as the workers the floor above). Your goal is to sabotage this boss in any way to get a promotion. If you pass the level you can use the elevator who brings you to the next level (higher floor).
 
 **Controls:**
 
