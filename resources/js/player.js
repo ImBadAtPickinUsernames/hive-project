@@ -27,7 +27,7 @@ main.player = function (game) {
     items = game.add.group();
     items.enableBody = true;
 
-    coffeeMugItem = items.create(500, game.world.height - 100, 'coffee-mug');
+    coffeeMugItem = items.create(1013, game.world.height - 46, 'coffee-mug-single');
     coffeeMugItem.body.immovable = true;
   }
 
