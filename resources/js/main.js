@@ -33,8 +33,8 @@ main = (function () {
     obstacles.createObsacles();
 
     // The player and its settings
-    player.initPlayer();
     player.initItems();
+    player.initPlayer();
     player.setPlayerPhysics();
     player.setWalkingAnimations();
     player.createInventory();

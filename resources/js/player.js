@@ -29,6 +29,8 @@ main.player = function (game) {
 
     coffeeMugItem = items.create(1013, game.world.height - 46, 'coffee-mug-single');
     coffeeMugItem.body.immovable = true;
+    coffeeMugItem.enableBody = true;
+    
   }
 
   function setPlayerPhysics() {
@@ -115,7 +117,7 @@ main.player = function (game) {
       w, s, a, d, e, spacebar;
 
     hitPlatform = game.physics.arcade.collide(player, platforms);
-    itemIsInRange = game.physics.arcade.collide(player, items);
+    itemIsInRange = game.physics.arcade.overlap(player, coffeeMugItem);
 
     w = game.input.keyboard.addKey(Phaser.Keyboard.W);
     s = game.input.keyboard.addKey(Phaser.Keyboard.S);
