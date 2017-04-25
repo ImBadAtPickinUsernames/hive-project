@@ -30,7 +30,16 @@ main.player = function (game) {
     coffeeMugItem = items.create(1013, game.world.height - 46, 'coffee-mug-single');
     coffeeMugItem.body.immovable = true;
     coffeeMugItem.enableBody = true;
-    
+  }
+
+  function createCoffeeInInv() {
+    coffeeMug = game.add.image(game.world.width / 2 - 400, -70, 'coffee-mug');
+    coffeeMug.anchor.set(0.5);
+    coffeeMug.inputEnabled = true;
+    coffeeMug.input.enableDrag();
+    inventoryGroup.add(coffeeMug);
+    /*coffeeMug.events.onDragStart.add(onDragStart, this);
+    coffeeMug.events.onDragStop.add(onDragStop, this);*/
   }
 
   function setPlayerPhysics() {
@@ -73,7 +82,7 @@ main.player = function (game) {
 
     // 1st item slot
     itemSlotOne = game.add.button(game.world.width / 2 - 400, -70, 'empty-slot', function () {
-      console.log("Item Slot 1 has been clicked!");
+      //console.log("Item Slot 1 has been clicked!");
     });
 
     itemSlotOne.anchor.set(0.5);
@@ -81,7 +90,7 @@ main.player = function (game) {
 
     // 2nd item slot
     itemSlotTwo = game.add.button(game.world.width / 2 - 200, -70, 'empty-slot', function () {
-      console.log("Item Slot 2 has been clicked!");
+      //console.log("Item Slot 2 has been clicked!");
     });
 
     itemSlotTwo.anchor.set(0.5);
@@ -89,7 +98,7 @@ main.player = function (game) {
 
     // 3rd item slot
     itemSlotThree = game.add.button(game.world.width / 2, -70, 'empty-slot', function () {
-      console.log("Item Slot 3 has been clicked!");
+      //console.log("Item Slot 3 has been clicked!");
     });
 
     itemSlotThree.anchor.set(0.5);
@@ -97,7 +106,7 @@ main.player = function (game) {
 
     // 4th item slot
     itemSlotFour = game.add.button(game.world.width / 2 + 200, -70, 'empty-slot', function () {
-      console.log("Item Slot 4 has been clicked!");
+      //console.log("Item Slot 4 has been clicked!");
     });
 
     itemSlotFour.anchor.set(0.5);
@@ -105,7 +114,7 @@ main.player = function (game) {
 
     // 5th item slot
     itemSlotFive = game.add.button(game.world.width / 2 + 400, -70, 'empty-slot', function () {
-      console.log("Item Slot 5 has been clicked!");
+      //console.log("Item Slot 5 has been clicked!");
     });
 
     itemSlotFive.anchor.set(0.5);
@@ -130,7 +139,7 @@ main.player = function (game) {
     handlePlayerJump(spacebar, hitPlatform);
     handleItemPickup(e, itemIsInRange);
   }
-
+  
   function handleItemPickup(e, itemIsInRange) {
     if (itemIsInRange && e.isDown) {
       pickUpItem();
@@ -138,20 +147,18 @@ main.player = function (game) {
   }
 
   function pickUpItem() {
-    if (slotOneFilled === false && itemIsInRange) {
-      coffeeMug = game.add.image(game.world.width / 2 - 400, -70, 'coffee-mug');
-      coffeeMug.anchor.set(0.5);
-      inventoryGroup.add(coffeeMug);
+    if (slotOneFilled === false) {
+      slotOneFilled = true;
+      createCoffeeInInv();
       coffeeMugItem.destroy();
-      slotOneFilled === true;
     } else if (slotOneFilled === true && slotTwoFilled === false) {
-      slotTwoFilled === true;
+      slotTwoFilled = true;
     } else if (slotTwoFilled === true && slotThreeFilled === false) {
-      slotThreeFilled === true;
+      slotThreeFilled = true;
     } else if (slotThreeFilled === true && slotFourFilled === false) {
-      slotFourFilled === true;
+      slotFourFilled = true;
     } else if (slotFourFilled === true && slotFiveFilled === false) {
-      slotFiveFilled === true;
+      slotFiveFilled = true;
     }
   }
 
