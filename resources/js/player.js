@@ -21,6 +21,17 @@ main.player = function (game) {
   function initPlayer() {
     // The player and its settings
     player = game.add.sprite(200, game.world.height - 150, 'main-char');
+    player.inputEnabled = true;
+    player.events.onInputOver.add(over, this);
+    player.events.onInputOut.add(out, this);
+  }
+
+  function over(object, pointer) {
+    object.alpha = 0.5;
+  }
+
+  function out(object, pointer) {
+    object.alpha = 1;
   }
 
   function initItems() {
@@ -30,16 +41,26 @@ main.player = function (game) {
     coffeeMugItem = items.create(1013, game.world.height - 46, 'coffee-mug-single');
     coffeeMugItem.body.immovable = true;
     coffeeMugItem.enableBody = true;
+    coffeeMugItem.inputEnabled = true;
+    coffeeMugItem.events.onInputOver.add(over, this);
+    coffeeMugItem.events.onInputOut.add(out, this);
   }
 
   function createCoffeeInInv() {
     coffeeMug = game.add.image(game.world.width / 2 - 400, -70, 'coffee-mug');
     coffeeMug.anchor.set(0.5);
     coffeeMug.inputEnabled = true;
+    coffeeMug.events.onInputOver.add(over, this);
+    coffeeMug.events.onInputOut.add(out, this);
     coffeeMug.input.enableDrag();
     inventoryGroup.add(coffeeMug);
-    /*coffeeMug.events.onDragStart.add(onDragStart, this);
-    coffeeMug.events.onDragStop.add(onDragStop, this);*/
+    //coffeeMug.events.onDragStart.add(onDragStart, this);
+    coffeeMug.events.onDragStop.add(onDragStop, this);
+  }
+
+  function onDragStop() {
+    coffeeMug.x = game.world.width / 2 - 400;
+    coffeeMug.y = -70;
   }
 
   function setPlayerPhysics() {
@@ -139,7 +160,7 @@ main.player = function (game) {
     handlePlayerJump(spacebar, hitPlatform);
     handleItemPickup(e, itemIsInRange);
   }
-  
+
   function handleItemPickup(e, itemIsInRange) {
     if (itemIsInRange && e.isDown) {
       pickUpItem();
