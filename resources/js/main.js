@@ -14,11 +14,14 @@ main = (function () {
     player,
     obstacles,
     textures,
-    npcs;
+    npcs,
+    text;
 
+  
   function preload() {
     init();
     textures.preloadTextures();
+    text.preloadText();
   }
 
   function create() {
@@ -29,8 +32,11 @@ main = (function () {
     obstacles.initObstacles();
     obstacles.setElevatorAnimation();
 
-    // creates platforms and other obstacles
+    // Creates platforms and other obstacles
     obstacles.createObsacles();
+    
+    // Creates text field for item and char descriptions
+    text.initText();
 
     // The player and its settings
     player.initItems();
@@ -54,6 +60,7 @@ main = (function () {
     player.updatePlayer(obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
     obstacles.updateObs();
+    text.updateText();
   }
 
   function init() {
@@ -61,6 +68,7 @@ main = (function () {
     npcs = new main.npcs(game);
     obstacles = new main.obstacles(game);
     textures = new main.textures(game);
+    text = new main.text(game);
   }
 
   function centerGame() {
