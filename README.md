@@ -15,7 +15,7 @@ Every floor of the building represents one level. Every worker on the floors wea
 
 **W** - toggle inventory
 
-**E** - use something
+**E** - pick up/use something
 
 **SPACEBAR** - jump
 
