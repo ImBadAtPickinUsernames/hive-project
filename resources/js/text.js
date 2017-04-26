@@ -41,9 +41,14 @@ main.text = function (game) {
   }
 
   function updateText() {
-
+    
   }
-
+  
+  function giveItemDescription(){
+     descText.setText("Sample Descrition");
+  }
+  
+  that.giveItemDescrition = giveItemDescription;
   that.preloadText = preloadText;
   that.initText = initText;
   that.updateText = updateText;

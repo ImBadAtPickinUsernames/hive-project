@@ -25,10 +25,12 @@ main.npcs = function (game) {
     npcFloorOneBoss.body.bounce.y = 0.2;
     npcFloorOneBoss.body.gravity.y = 300;
     npcFloorOneBoss.body.collideWorldBounds = true;
+    npcFloorOneBoss.inputEnabled = true;
 
     npc.body.bounce.y = 0.2;
     npc.body.gravity.y = 300;
     npc.body.collideWorldBounds = true;
+    npc.inputEnabled = true;
   }
 
   function setWalkingAnimations() {
@@ -96,8 +98,18 @@ main.npcs = function (game) {
       tempNpc.animations.play('right', 8, true);
     }
   }
+  
+  function getBasicNpcs(){
+    return npc;
+  }
+  
+  function getBossNpc(){
+    return npcFloorOneBoss;
+  }
 
   that.initNpcs = initNpcs;
+  that.getBasicNpcs = getBasicNpcs;
+  that.getBossNpc = getBossNpc;
   that.initNpcMovement = initNpcMovement;
   that.setWalkingAnimations = setWalkingAnimations;
   that.setNpcPhysics = setNpcPhysics;

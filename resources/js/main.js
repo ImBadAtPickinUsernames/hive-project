@@ -15,11 +15,14 @@ main = (function () {
     obstacles,
     textures,
     npcs,
-    text;
+    text,
+    pointer,
+    items,
+    interactions;
 
-  
   function preload() {
     init();
+    initEvents();
     textures.preloadTextures();
     text.preloadText();
   }
@@ -34,21 +37,34 @@ main = (function () {
 
     // Creates platforms and other obstacles
     obstacles.createObsacles();
+
+    // Creates Items
+    items.createItems();
+    
+    // Creates Inventory
+    items.createInventory();
     
     // Creates text field for item and char descriptions
     text.initText();
-
+    
     // The player and its settings
-    player.initItems();
     player.initPlayer();
     player.setPlayerPhysics();
     player.setWalkingAnimations();
-    player.createInventory();
 
     // The Npcs and its settings
     npcs.initNpcs();
     npcs.setNpcPhysics();
     npcs.setWalkingAnimations();
+
+    // Creates pointing device effects
+
+    // level 1
+    pointer.initHoverEffect(player.getPlayer());
+    //pointer.initHoverEffect(items.getCoffeeMugInv());
+    pointer.initHoverEffect(items.getCoffeeMugItem());
+    pointer.initHoverEffect(npcs.getBasicNpcs());
+    pointer.initHoverEffect(npcs.getBossNpc());
 
     // random npc movement
     game.time.events.repeat(Phaser.Timer.SECOND * 3, 10, npcs.initNpcMovement, game);
@@ -56,8 +72,8 @@ main = (function () {
 
   function update() {
     centerGame();
-
-    player.updatePlayer(obstacles.getPlatforms());
+    
+    interactions.update(player.getPlayer(), items.getCoffeeMugItem(), obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
     obstacles.updateObs();
     text.updateText();
@@ -69,6 +85,24 @@ main = (function () {
     obstacles = new main.obstacles(game);
     textures = new main.textures(game);
     text = new main.text(game);
+    pointer = new main.pointer(game);
+    items = new main.items(game);
+    interactions = new main.interactions(game);
+  }
+  
+  // Events
+  
+  function onPickUpItem(){
+    items.pickUpItem();
+  }
+  
+  function onToggleInventory(){
+    items.toggleInventory();
+  }
+  
+  function initEvents(){
+    interactions.addEventListener("picksUpItem", onPickUpItem);
+    interactions.addEventListener("togglesInventory", onToggleInventory)
   }
 
   function centerGame() {
@@ -77,8 +111,6 @@ main = (function () {
     game.scale.pageAlignVertically = true;
     game.scale.refresh();
   }
-
-  that.init = init;
 
   return that;
 }());
