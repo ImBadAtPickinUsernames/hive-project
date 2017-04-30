@@ -25,13 +25,14 @@ main = (function () {
     initEvents();
     textures.preloadTextures();
     text.preloadText();
+    interactions.initControls();
   }
 
   function create() {
-    // draw building and background
+    // Draw building and background
     textures.loadTextures();
 
-    // inititates collision objects like platforms and other obstacles
+    // Inititates collision objects like platforms and other obstacles
     obstacles.initObstacles();
     obstacles.setElevatorAnimation();
 
@@ -59,14 +60,13 @@ main = (function () {
 
     // Creates pointing device effects
 
-    // level 1
+    // Level 1
     pointer.initHoverEffect(player.getPlayer());
-    //pointer.initHoverEffect(items.getCoffeeMugInv());
     pointer.initHoverEffect(items.getCoffeeMugItem());
     pointer.initHoverEffect(npcs.getBasicNpcs());
     pointer.initHoverEffect(npcs.getBossNpc());
 
-    // random npc movement
+    // Random npc movement
     game.time.events.repeat(Phaser.Timer.SECOND * 3, 10, npcs.initNpcMovement, game);
   }
 
@@ -91,13 +91,14 @@ main = (function () {
   }
   
   // Events
-  
   function onPickUpItem(){
     items.pickUpItem();
+    pointer.initHoverEffect(items.getCoffeeMugInv());
   }
   
   function onToggleInventory(){
     items.toggleInventory();
+    text.textWhenToggle();
   }
   
   function initEvents(){
@@ -106,7 +107,7 @@ main = (function () {
   }
 
   function centerGame() {
-    // centers the game canvas to the middle of the screen
+    // Centers the game canvas to the middle of the screen
     game.scale.pageAlignHorizontally = true;
     game.scale.pageAlignVertically = true;
     game.scale.refresh();

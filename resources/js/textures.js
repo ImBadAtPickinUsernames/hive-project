@@ -31,7 +31,7 @@ main.textures = function (game) {
     // A city skyline background
     game.add.image(0, 0, 'background');
     // the Hive building
-    game.add.image(150, -game.world.height + 300, 'building');
+    game.add.image(153, -game.world.height + 300, 'building');
   }
 
   that.loadTextures = loadTextures;

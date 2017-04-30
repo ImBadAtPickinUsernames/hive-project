@@ -86,7 +86,7 @@ main.items = function (game) {
     items = game.add.group();
     items.enableBody = true;
 
-    coffeeMugItem = items.create(1013, game.world.height - 46, 'coffee-mug-single');
+    coffeeMugItem = items.create(1030, game.world.height - 39, 'coffee-mug-single');
     coffeeMugItem.body.immovable = true;
     coffeeMugItem.enableBody = true;
   }
@@ -103,6 +103,7 @@ main.items = function (game) {
         y: 0
       }, 500, Phaser.Easing.Bounce.Out, true);
     }
+    // console.log("Inventory got toggled.");
   }
 
   function createCoffeeInInv() {
@@ -137,7 +138,7 @@ main.items = function (game) {
     }
   }
 
-  // level 1
+  // Level 1
   function getCoffeeMugInv() {
     return coffeeMug;
   }

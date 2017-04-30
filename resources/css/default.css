@@ -1,14 +1,17 @@
-header{
+header {
   color: white;
 }
 
 body {
+  font-family: 'Share Tech Mono', monospace;
   margin: 0;
   background-color: black;
+  color: white
 }
 
-footer{
-  color: white; 
+footer {
 }
 
-
+.credits {
+  text-align: center;
+}

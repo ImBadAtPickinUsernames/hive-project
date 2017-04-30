@@ -17,10 +17,10 @@ main.obstacles = function (game) {
     platforms.enableBody = true;
 
     // Here we create the ground.
-    var ground = platforms.create(164, game.world.height - 5, 'ground');
+    var ground = platforms.create(153, game.world.height - 5, 'ground');
 
     //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-    ground.scale.setTo(2.428, 0.5);
+    ground.scale.setTo(2.537, 0.5);
 
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
@@ -35,12 +35,12 @@ main.obstacles = function (game) {
     // building walls
 
     // left
-    wall = platforms.create(150, 0, 'wall')
-    wall.scale.setTo(0.5, 3);
+    wall = platforms.create(155, 0, 'wall')
+    wall.scale.setTo(0.1, 3);
     wall.body.immovable = true;
     // right
-    wall = platforms.create(1130, 0, 'wall')
-    wall.scale.setTo(0.5, 3);
+    wall = platforms.create(1160, 0, 'wall')
+    wall.scale.setTo(0.1, 3);
     wall.body.immovable = true;
   }
 

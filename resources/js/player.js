@@ -31,8 +31,6 @@ main.player = function (game) {
     return player;
   }
 
-
-
   that.initPlayer = initPlayer;
   that.getPlayer = getPlayer;
   that.setWalkingAnimations = setWalkingAnimations;
