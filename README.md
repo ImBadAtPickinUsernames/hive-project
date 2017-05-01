@@ -1,6 +1,6 @@
 # hive-project
 
-hive <\ location> <\time>
+hive < New York City > < 8:01 am >
 
 **Game idea:**
 
