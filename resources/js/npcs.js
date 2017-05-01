@@ -11,10 +11,10 @@ main.npcs = function (game) {
 
   function initNpcs() {
     // The Npc and its settings
-    npcFloorOneBoss = game.add.sprite(900, game.world.height - 150, 'floor-one-boss');
+    npcFloorOneBoss = game.add.sprite(900, game.world.height - 150, 'Joel, my boss..');
 
     basicNpcs = game.add.group();
-    npc = basicNpcs.create(500, game.world.height - 150, 'npc-floor-one-basic');
+    npc = basicNpcs.create(500, game.world.height - 150, 'Steve, a Co-Worker');
   }
 
   function setNpcPhysics() {

@@ -9,7 +9,7 @@ main.player = function (game) {
 
   function initPlayer() {
     // The player and its settings
-    player = game.add.sprite(200, game.world.height - 150, 'main-char');
+    player = game.add.sprite(200, game.world.height - 150, 'me');
   }
 
   function setPlayerPhysics() {

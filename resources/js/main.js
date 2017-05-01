@@ -41,13 +41,13 @@ main = (function () {
 
     // Creates Items
     items.createItems();
-    
+
     // Creates Inventory
     items.createInventory();
-    
+
     // Creates text field for item and char descriptions
     text.initText();
-    
+
     // The player and its settings
     player.initPlayer();
     player.setPlayerPhysics();
@@ -72,7 +72,7 @@ main = (function () {
 
   function update() {
     centerGame();
-    
+
     interactions.update(player.getPlayer(), items.getCoffeeMugItem(), obstacles.getPlatforms());
     npcs.updateNpc(obstacles.getPlatforms());
     obstacles.updateObs();
@@ -89,19 +89,18 @@ main = (function () {
     items = new main.items(game);
     interactions = new main.interactions(game);
   }
-  
+
   // Events
-  function onPickUpItem(){
+  function onPickUpItem() {
     items.pickUpItem();
-    pointer.initHoverEffect(items.getCoffeeMugInv());
   }
-  
-  function onToggleInventory(){
+
+  function onToggleInventory() {
     items.toggleInventory();
     text.textWhenToggle();
   }
-  
-  function initEvents(){
+
+  function initEvents() {
     interactions.addEventListener("picksUpItem", onPickUpItem);
     interactions.addEventListener("togglesInventory", onToggleInventory)
   }
