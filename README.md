@@ -1,6 +1,6 @@
 # hive-project
 
-hive <location> <time>
+hive <\ location> <\time>
 
 **Game idea:**
 
