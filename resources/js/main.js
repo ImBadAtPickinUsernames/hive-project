@@ -38,29 +38,26 @@ main = (function () {
 
     // Creates platforms and other obstacles
     obstacles.createObsacles();
-
-    // Creates Items
-    items.createItems();
-
-    // Creates Inventory
+    
+    // Creates Inventory and Items
     items.createInventory();
-
-    // Creates text field for item and char descriptions
-    text.initText();
 
     // The player and its settings
     player.initPlayer();
     player.setPlayerPhysics();
     player.setWalkingAnimations();
 
+    // Level 1
+    
     // The Npcs and its settings
     npcs.initNpcs();
     npcs.setNpcPhysics();
     npcs.setWalkingAnimations();
-
+    
+    // Items Lvl 1
+    items.createItems();
+    
     // Creates pointing device effects
-
-    // Level 1
     pointer.initHoverEffect(player.getPlayer());
     pointer.initHoverEffect(items.getCoffeeMugItem());
     pointer.initHoverEffect(npcs.getBasicNpcs());
@@ -93,6 +90,7 @@ main = (function () {
   // Events
   function onPickUpItem() {
     items.pickUpItem();
+    text.textWhenPickup();
   }
 
   function onToggleInventory() {

@@ -23,17 +23,18 @@ main.text = function (/*game*/) {
   }
   
   function textWhenToggle() {
-    /*if(descText.y === 5) {
-      descText.y = 145;
-    } else {
-      descText.y = 5;
-    }*/
+    console.log("Opened inventory.");
+  }
+  
+  function textWhenPickup() {
+    console.log("Picked up coffee mug.");
   }
   
   function giveItemDescription(){
      descText.setText("Sample Descrition");
   }
   
+  that.textWhenPickup = textWhenPickup;
   that.giveItemDescrition = giveItemDescription;
   that.preloadText = preloadText;
   that.initText = initText;

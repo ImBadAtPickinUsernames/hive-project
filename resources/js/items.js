@@ -99,7 +99,6 @@ main.items = function (game) {
     coffeeMug.y = game.world.height / 2 - 150;
   }
 
-
   function pickUpItem() {
     if (slotOneFilled === false) {
       slotOneFilled = true;
