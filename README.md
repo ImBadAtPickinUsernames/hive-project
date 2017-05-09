@@ -18,7 +18,7 @@ Every floor of the building represents one level. Every worker on the floors wea
 
 **E** - pick up/use something
 
-**SPACEBAR** - jump
+**SPACEBAR** - jump _(no use for now)_
 
 **Inspired by:**
 
@@ -26,3 +26,4 @@ George Cruikshank's British Bee Hive, originally sketched in 1840, here reprinte
 
 ![british-beehive](https://cloud.githubusercontent.com/assets/20909245/25156887/db549134-249d-11e7-9196-df14201c649d.jpg)
 
+I am documenting my creation progress in this issue -> https://github.com/ImBadAtPickinUsernames/hive-project/issues/2 
