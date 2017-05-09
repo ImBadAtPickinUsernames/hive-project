@@ -9,6 +9,7 @@ main.items = function (game) {
     items,
     coffeeMug,
     coffeeMugItem,
+    janitorWagon,
     inventoryGroup,
     slotOneFilled = false,
     slotTwoFilled = false,
@@ -67,6 +68,10 @@ main.items = function (game) {
     coffeeMugItem = items.create(1030, game.world.height - 39, 'Joels coffee');
     coffeeMugItem.body.immovable = true;
     coffeeMugItem.enableBody = true;
+    
+    janitorWagon = items.create(280, 698, 'the janitors wagon');
+    janitorWagon.body.immovable = true;
+    janitorWagon.enableBody = true;
   }
 
   // Inventory inspired by http://codepen.io/cardex107/pen/VaPRXo

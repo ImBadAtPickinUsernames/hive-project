@@ -62,6 +62,7 @@ main = (function () {
     pointer.initHoverEffect(items.getCoffeeMugItem());
     pointer.initHoverEffect(npcs.getBasicNpcs());
     pointer.initHoverEffect(npcs.getBossNpc());
+    pointer.initHoverEffect(npcs.getJanitor());
 
     // Random npc movement
     game.time.events.repeat(Phaser.Timer.SECOND * 3, 10, npcs.initNpcMovement, game);

@@ -15,6 +15,7 @@ main.textures = function (game) {
     // Special world elements
     game.load.spritesheet('elevator', 'resources/assets/backgrounds/elevator-sprite.png', 50, 60);
     game.load.image('text-box', 'resources/assets/items/text-box.png');
+    game.load.image('the janitors wagon', 'resources/assets/items/janitor_wagon.png');
     // Inventory
     game.load.image('empty-slot', 'resources/assets/items/empty-slot.png');
     game.load.image('inventory-button', 'resources/assets/items/inventory-button.png');
@@ -25,6 +26,7 @@ main.textures = function (game) {
     game.load.spritesheet('me', 'resources/assets/chars/main-char.png', 22, 50);
     game.load.spritesheet('Joel, my boss..', 'resources/assets/chars/npc-blue-tie/floor-one-boss.png', 22, 50);
     game.load.spritesheet('Steve, a Co-Worker', 'resources/assets/chars/npc-blue-tie/white-black-hair-npc-basic.png', 22, 50);
+    game.load.image('the janitor', 'resources/assets/chars/janitor.png');
   }
 
   function loadTextures() {

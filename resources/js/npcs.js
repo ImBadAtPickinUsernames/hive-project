@@ -7,6 +7,7 @@ main.npcs = function (game) {
   var that = {},
     npcFloorOneBoss,
     npc,
+    janitor,
     basicNpcs;
 
   function initNpcs() {
@@ -14,12 +15,14 @@ main.npcs = function (game) {
     npcFloorOneBoss = game.add.sprite(900, game.world.height - 150, 'Joel, my boss..');
     basicNpcs = game.add.group();
     npc = basicNpcs.create(500, game.world.height - 150, 'Steve, a Co-Worker');
+    janitor = basicNpcs.create(310, game.world.height - 150, 'the janitor');
   }
 
   function setNpcPhysics() {
     //  We need to enable physics on the npcs
     game.physics.arcade.enable(npcFloorOneBoss);
     game.physics.arcade.enable(npc);
+    game.physics.arcade.enable(janitor);
 
     npcFloorOneBoss.body.bounce.y = 0.2;
     npcFloorOneBoss.body.gravity.y = 300;
@@ -30,6 +33,11 @@ main.npcs = function (game) {
     npc.body.gravity.y = 300;
     npc.body.collideWorldBounds = true;
     npc.inputEnabled = true;
+    
+    janitor.body.bounce.y = 0.2;
+    janitor.body.gravity.y = 300;
+    janitor.body.collideWorldBounds = true;
+    janitor.inputEnabled = true;
   }
 
   function setWalkingAnimations() {
@@ -44,13 +52,16 @@ main.npcs = function (game) {
   function updateNpc(platforms) {
     //  Collision between npcs and plattforms
     var hitPlatformBoss,
-      hitPlatformNpc;
+      hitPlatformNpc,
+      hitPlatformJanitor;
 
     hitPlatformBoss = game.physics.arcade.collide(npcFloorOneBoss, platforms);
     hitPlatformNpc = game.physics.arcade.collide(npc, platforms);
+    hitPlatformJanitor = game.physics.arcade.collide(janitor, platforms);
 
     handleNpcCollision(hitPlatformBoss, npcFloorOneBoss);
     handleNpcCollision(hitPlatformNpc, npc);
+    handleNpcCollision(hitPlatformJanitor, npc);
   }
 
   function initNpcMovement() {
@@ -105,8 +116,13 @@ main.npcs = function (game) {
   function getBossNpc(){
     return npcFloorOneBoss;
   }
+  
+  function getJanitor(){
+    return janitor;
+  }
 
   that.initNpcs = initNpcs;
+  that.getJanitor = getJanitor;
   that.getBasicNpcs = getBasicNpcs;
   that.getBossNpc = getBossNpc;
   that.initNpcMovement = initNpcMovement;
