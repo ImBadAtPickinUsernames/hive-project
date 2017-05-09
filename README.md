@@ -10,7 +10,7 @@ Every floor of the building represents one level. Every worker on the floors wea
 
 **Preview**
 
-I am documenting my [creation progress](https://github.com/ImBadAtPickinUsernames/hive-project/issues/2) in an issue.
+> I am documenting my [creation progress](https://github.com/ImBadAtPickinUsernames/hive-project/issues/2) in an issue.
 
 **Controls:**
 
