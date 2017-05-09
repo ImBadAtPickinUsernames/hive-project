@@ -26,4 +26,4 @@ George Cruikshank's British Bee Hive, originally sketched in 1840, here reprinte
 
 ![british-beehive](https://cloud.githubusercontent.com/assets/20909245/25156887/db549134-249d-11e7-9196-df14201c649d.jpg)
 
-I am documenting my creation progress in this issue -> see also [#2](https://github.com/ImBadAtPickinUsernames/hive-project/issues/2)
+I am documenting my [creation progress](https://github.com/ImBadAtPickinUsernames/hive-project/issues/2) in an issue.
