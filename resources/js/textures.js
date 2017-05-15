@@ -25,7 +25,7 @@ main.textures = function (game) {
     // Chars
     game.load.spritesheet('me', 'resources/assets/chars/main-char.png', 22, 50);
     game.load.spritesheet('Joel, my boss..', 'resources/assets/chars/npc-blue-tie/floor-one-boss.png', 22, 50);
-    game.load.spritesheet('Steve, a Co-Worker', 'resources/assets/chars/npc-blue-tie/white-black-hair-npc-basic.png', 22, 50);
+    game.load.spritesheet('Steve, a co-worker', 'resources/assets/chars/npc-blue-tie/white-black-hair-npc-basic.png', 22, 50);
     game.load.image('the janitor', 'resources/assets/chars/janitor.png');
   }
 

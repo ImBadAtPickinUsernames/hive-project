@@ -41,21 +41,19 @@ main = (function () {
     
     // Creates Inventory and Items
     items.createInventory();
-
-    // The player and its settings
-    player.initPlayer();
-    player.setPlayerPhysics();
-    player.setWalkingAnimations();
-
-    // Level 1
     
-    // The Npcs and its settings
+    // Level 1 Items
+    items.createItems();
+    
+    // Level 1 Npcs and its settings
     npcs.initNpcs();
     npcs.setNpcPhysics();
     npcs.setWalkingAnimations();
     
-    // Items Lvl 1
-    items.createItems();
+    // The player and its settings
+    player.initPlayer();
+    player.setPlayerPhysics();
+    player.setWalkingAnimations();
     
     // Creates pointing device effects
     pointer.initHoverEffect(player.getPlayer());
