@@ -2,6 +2,10 @@
 
 HIVE < New York City > < 8:01 am >
 
+
+![hive](https://user-images.githubusercontent.com/20909245/37375201-df598eea-271e-11e8-8592-f8aabb629a2a.png)
+
+
 **Game idea:**
 
 The basic idea of this game will be to get to the top of the building no matter what. You may have to use unorthodox methods to climb your way on top of the food chain. What will wait on the top? What secrets does this company hide?
