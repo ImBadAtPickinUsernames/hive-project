@@ -99,7 +99,7 @@ main = (function () {
 
   function initEvents() {
     interactions.addEventListener("picksUpItem", onPickUpItem);
-    interactions.addEventListener("togglesInventory", onToggleInventory)
+    interactions.addEventListener("togglesInventory", onToggleInventory);
   }
 
   function centerGame() {

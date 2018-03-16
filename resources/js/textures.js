@@ -9,7 +9,7 @@ main.textures = function (game) {
   function preloadTextures() {
     // World basics
     game.load.image('background', 'resources/assets/backgrounds/skyscraper-background.png');
-    game.load.image('building', 'resources/assets/backgrounds/buildingv2.png');
+    game.load.image('building', 'resources/assets/backgrounds/office.png');
     game.load.image('ground', 'resources/assets/obstacles/platform.png');
     game.load.image('wall', 'resources/assets/obstacles/wall.png');
     // Special world elements
