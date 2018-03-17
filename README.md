@@ -2,11 +2,7 @@
 
 HIVE < New York City > < 8:01 am >
 
-
-![hive](https://user-images.githubusercontent.com/20909245/37549838-9d4b8a2c-2984-11e8-95de-3f77b221678b.gif)
-
 ![officethumbmail](https://user-images.githubusercontent.com/20909245/37549839-9d66a096-2984-11e8-88fb-6698d3e7a332.png)
-
 
 **Game idea:**
 
