@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* global main */
 
-main.text = function (/*game*/) {
+main.text = function ( /*game*/ ) {
   "use strict";
 
   var that = {},
@@ -16,24 +16,22 @@ main.text = function (/*game*/) {
     descText.strokeThickness = 1.5;*/
   }
 
-  function preloadText() {
-  }
+  function preloadText() {}
 
-  function updateText() {
-  }
-  
+  function updateText() {}
+
   function textWhenToggle() {
     console.log("Opened inventory.");
   }
-  
+
   function textWhenPickup() {
     console.log("Picked up coffee mug.");
   }
-  
-  function giveItemDescription(){
-     descText.setText("Sample Descrition");
+
+  function giveItemDescription() {
+    descText.setText("Sample Descrition");
   }
-  
+
   that.textWhenPickup = textWhenPickup;
   that.giveItemDescrition = giveItemDescription;
   that.preloadText = preloadText;

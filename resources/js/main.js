@@ -38,23 +38,23 @@ main = (function () {
 
     // Creates platforms and other obstacles
     obstacles.createObsacles();
-    
+
     // Creates Inventory and Items
     items.createInventory();
-    
+
     // Level 1 Items
     items.createItems();
-    
+
     // Level 1 Npcs and its settings
     npcs.initNpcs();
     npcs.setNpcPhysics();
     npcs.setWalkingAnimations();
-    
+
     // The player and its settings
     player.initPlayer();
     player.setPlayerPhysics();
     player.setWalkingAnimations();
-    
+
     // Creates pointing device effects
     pointer.initHoverEffect(player.getPlayer());
     pointer.initHoverEffect(items.getCoffeeMugItem());

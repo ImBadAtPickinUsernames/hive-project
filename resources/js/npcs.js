@@ -33,7 +33,7 @@ main.npcs = function (game) {
     npc.body.gravity.y = 300;
     npc.body.collideWorldBounds = true;
     npc.inputEnabled = true;
-    
+
     janitor.body.bounce.y = 0.2;
     janitor.body.gravity.y = 300;
     janitor.body.collideWorldBounds = true;
@@ -108,16 +108,16 @@ main.npcs = function (game) {
       tempNpc.animations.play('right', 8, true);
     }
   }
-  
-  function getBasicNpcs(){
+
+  function getBasicNpcs() {
     return npc;
   }
-  
-  function getBossNpc(){
+
+  function getBossNpc() {
     return npcFloorOneBoss;
   }
-  
-  function getJanitor(){
+
+  function getJanitor() {
     return janitor;
   }
 
