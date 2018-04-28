@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* global main */
 
-main.textures = function (game) {
+main.textures = function(game) {
   "use strict";
 
   var that = {};

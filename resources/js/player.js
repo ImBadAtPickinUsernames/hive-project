@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* global main */
 
-main.player = function (game) {
+main.player = function(game) {
   "use strict";
 
   var that = {},

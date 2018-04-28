@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* global main */
 
-main.obstacles = function (game) {
+main.obstacles = function(game) {
   "use strict";
 
   var that = {},

@@ -2,7 +2,7 @@
 /* global main */
 /* global Phaser */
 
-main.items = function (game) {
+main.items = function(game) {
   "use strict";
 
   var that = {},
@@ -37,7 +37,7 @@ main.items = function (game) {
     inventoryGroup.add(inventoryBackground);
 
     // 1st item slot
-    itemSlotOne = game.add.button(-70, game.world.height / 2 - 150, 'empty-slot', function () {
+    itemSlotOne = game.add.button(-70, game.world.height / 2 - 150, 'empty-slot', function() {
       //console.log("Item Slot 1 has been clicked!");
     });
 
@@ -45,7 +45,7 @@ main.items = function (game) {
     inventoryGroup.add(itemSlotOne);
 
     // 2nd item slot
-    itemSlotTwo = game.add.button(-70, game.world.height / 2, 'empty-slot', function () {
+    itemSlotTwo = game.add.button(-70, game.world.height / 2, 'empty-slot', function() {
       //console.log("Item Slot 2 has been clicked!");
     });
 
@@ -53,7 +53,7 @@ main.items = function (game) {
     inventoryGroup.add(itemSlotTwo);
 
     // 3rd item slot
-    itemSlotThree = game.add.button(-70, game.world.height / 2 + 150, 'empty-slot', function () {
+    itemSlotThree = game.add.button(-70, game.world.height / 2 + 150, 'empty-slot', function() {
       //console.log("Item Slot 3 has been clicked!");
     });
 

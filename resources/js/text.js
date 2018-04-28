@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* global main */
 
-main.text = function ( /*game*/ ) {
+main.text = function( /*game*/ ) {
   "use strict";
 
   var that = {},
