@@ -2,7 +2,7 @@
 /* global main */
 /* global Phaser */
 
-main.pointer = function (game) {
+main.pointer = function(game) {
   "use strict";
 
   var that = {},
@@ -14,7 +14,7 @@ main.pointer = function (game) {
     stuff.inputEnabled = true;
     stuff.events.onInputOver.add(over, this);
     stuff.events.onInputOut.add(out, this);
-    stuff.events.onInputDown.add(function () {
+    stuff.events.onInputDown.add(function() {
       if (canClick === true) {
         textBox = game.add.image(game.world.width / 2, 0, 'text-box');
         textBox.anchor.x = 0.5;

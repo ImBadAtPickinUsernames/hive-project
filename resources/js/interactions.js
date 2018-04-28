@@ -3,7 +3,7 @@
 /* global Phaser */
 /* global EventPublisher */
 
-main.interactions = function (game) {
+main.interactions = function(game) {
   "use strict";
 
   var that = new EventPublisher(),
@@ -30,7 +30,7 @@ main.interactions = function (game) {
     d = game.input.keyboard.addKey(Phaser.Keyboard.D);
     e = game.input.keyboard.addKey(Phaser.Keyboard.E);
 
-    w.onDown.add(function () {
+    w.onDown.add(function() {
       that.notifyAll("togglesInventory")
     }, this);
   }

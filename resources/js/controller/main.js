@@ -2,7 +2,7 @@
 /* eslint-env browser  */
 
 var main = main || {};
-main = (function () {
+main = (function() {
   "use strict";
 
   var that = {},

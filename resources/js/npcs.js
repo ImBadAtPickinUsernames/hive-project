@@ -1,7 +1,7 @@
 /* eslint-env browser */
 /* global main */
 
-main.npcs = function (game) {
+main.npcs = function(game) {
   "use strict";
 
   var that = {},
