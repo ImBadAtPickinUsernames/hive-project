@@ -12,7 +12,7 @@ main.interactions = function (game) {
   function update(player, item, platforms) {
     var hitPlatform,
       itemIsInRange;
-    
+
     spacebar = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     hitPlatform = game.physics.arcade.collide(player, platforms);
