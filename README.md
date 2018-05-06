@@ -4,8 +4,6 @@ HIVE < New York City > < 8:01 am >
 
 ![officethumbmail](https://user-images.githubusercontent.com/20909245/37549839-9d66a096-2984-11e8-88fb-6698d3e7a332.png)
 
-https://imbadatpickinusernames.github.io/hive-project/ <- click this link to test the latest version
-
 **Game idea:**
 
 The basic idea of this game will be to get to the top of the building no matter what. You may have to use unorthodox methods to climb your way on top of the food chain. What will wait on the top? What secrets does this company hide?
@@ -15,6 +13,9 @@ Every floor of the building represents one level. Every worker on the floors wea
 **Preview**
 
 > I am documenting my [creation progress](https://github.com/ImBadAtPickinUsernames/hive-project/issues/2) in an issue.
+
+> click this link to test the latest version -> https://imbadatpickinusernames.github.io/hive-project/ 
+
 
 **Controls:**
 
